@@ -1,0 +1,70 @@
+mysql> use thehightable;
+Database changed
+
+mysql> show tables;
++------------------------+
+| Tables_in_thehightable |
++------------------------+
+| contracts              |
+| login                  |
++------------------------+
+2 rows in set (0.01 sec)
+
+mysql> describe login;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| Unique_ID | varchar(10) | YES  |     | NULL    |       |
+| Password  | varchar(20) | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+2 rows in set (0.01 sec)
+
+mysql> insert into login values("C1","c1password");
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into login values("C2","c2password");
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into login values("C3","c3password");
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into login values("H1","h1password");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into login values("H2","h2password");
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into login values("H3","h3password");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into login values("H4","h4password");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into login values("H5","h5password");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select*from login;
++-----------+------------+
+| Unique_ID | Password   |
++-----------+------------+
+| C1        | c1password |
+| C2        | c2password |
+| C3        | c3password |
+| H1        | h1password |
+| H2        | h2password |
+| H3        | h3password |
+| H4        | h4password |
+| H5        | h5password |
++-----------+------------+
+8 rows in set (0.00 sec)
+
+mysql> describe contracts;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| Unique_ID | varchar(10) | NO   | PRI | NULL    |       |
+| Name      | varchar(20) | YES  |     | NULL    |       |
+| Money     | int         | YES  |     | NULL    |       |
+| Taken_by  | varchar(10) | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
